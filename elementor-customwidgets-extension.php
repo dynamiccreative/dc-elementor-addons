@@ -2,15 +2,31 @@
 
 /**
  * Plugin Name: Elementor Custom Widgets Extension
- * Description: Elementor Custom Widgets Extension
+ * Description: DC addons Elementor - Widgets 
  * Plugin URI: 
- * Version: 0.2
- * Author: DC
- * Author URI: 
+ * Version: 0.21
+ * Author: Dynamic Creative
+ * Author URI: https://www.dynamic-creative.com
  * Text Domain: elementor-customwidgets-extension
+ * GitHub Plugin URI: bastiendc/dc-elementor-addons 
+ * GitHub Plugin URI: https://github.com/bastiendc/dc-elementor-addons
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
+
+/**
+ * ELEMENTOR
+ */
+function add_elementor_widget_categories( $elements_manager ) {
+   $elements_manager->add_category(
+      'dc-addons',
+      [
+         'title' => 'DC ADDONS',
+         'icon' => 'fa fa-plug',
+      ]
+   );
+}
+add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
 
 class Elementor_CustomWidgets_Extension {
 
@@ -53,19 +69,19 @@ class Elementor_CustomWidgets_Extension {
       add_action('elementor/frontend/after_enqueue_styles', [ $this, 'widget_styles' ]);
       add_action('elementor/frontend/before_enqueue_scripts', [ $this, 'widget_scripts' ]);
    }
-	
+   
    public function widget_styles_admin() { 
       wp_enqueue_style( 'dcael-css-admin',  plugins_url() . '/dc-elementor-addons/admin-el.css' );
    }
 
-	public function widget_styles() { 
-		wp_enqueue_style( 'dcael-css',  plugins_url() . '/dc-elementor-addons/dcael.css' );
-	}
+   public function widget_styles() { 
+      wp_enqueue_style( 'dcael-css',  plugins_url() . '/dc-elementor-addons/dcael.css' );
+   }
     
     public function widget_scripts() { 
-		wp_enqueue_script( 'dcael-js',  plugins_url() . '/dc-elementor-addons/dcael.js' );
-	}
-	
+      wp_enqueue_script( 'dcael-js',  plugins_url() . '/dc-elementor-addons/dcael.js' );
+   }
+   
    public function init_widgets() {
 
       // Include Widget files
@@ -74,8 +90,8 @@ class Elementor_CustomWidgets_Extension {
       require_once('widgets/widget-icon-text-v2.php' );
       require_once('widgets/widget-temoin.php' );
       require_once('widgets/widget-gallery-slick.php' );
-      require_once('widgets/widget-gallery-photo.php' );
-      require_once('widgets/widget-slider-bloc.php' );
+      //require_once('widgets/widget-gallery-photo.php' );
+      //require_once('widgets/widget-slider-bloc.php' );
       require_once('widgets/widget-slider-temoin.php' );
       require_once('widgets/widget-bulle.php' );
       require_once('widgets/widget-bloc-picto-text.php' ); 
@@ -86,8 +102,8 @@ class Elementor_CustomWidgets_Extension {
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Icon_Text_v2() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Temoin() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Gallery_Slick() );
-      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Gallery_Photo() );
-      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Bloc() );
+      //\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Gallery_Photo() );
+      //\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Bloc() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Temoin() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bulle() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bloc_Picto_Text() ); 
