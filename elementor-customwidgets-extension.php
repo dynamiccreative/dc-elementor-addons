@@ -10,6 +10,7 @@
  * Text Domain: elementor-customwidgets-extension
  * GitHub Plugin URI: bastiendc/dc-elementor-addons 
  * GitHub Plugin URI: https://github.com/bastiendc/dc-elementor-addons
+ * Primary Branch: main
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
