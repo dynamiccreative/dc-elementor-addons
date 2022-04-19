@@ -182,7 +182,7 @@ class Widget_Icon_Text_v2 extends Widget_Base {
                 'type' => Controls_Manager::COLOR,
                 'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .titre' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .txt_color' => 'color: {{VALUE}};',
 				],
             ]
         );
@@ -318,15 +318,14 @@ class Widget_Icon_Text_v2 extends Widget_Base {
 		<div class="widget-icontextv2">
 			<div class="text-center mb-2">
 				<div class="rr-icon"><span class="ic <?php echo $icon; ?>"></span></div>
-				<div class="titre"><?php echo $titre; ?></div>
+				<div class="titre txt_color"><?php echo $titre; ?></div>
 			</div>
-			<!--<div class="txt"><?php //echo $settings['text']; ?></div>-->
 			<ul <?php $this->print_render_attribute_string( 'icon_list' ); ?>>
 				<?php
 				foreach ( $settings['icon_list'] as $index => $item ) :
 					$repeater_setting_key = $this->get_repeater_setting_key( 'text', 'icon_list', $index );
 
-					$this->add_render_attribute( $repeater_setting_key, 'class', 'elementor-icon-list-text' );
+					$this->add_render_attribute( $repeater_setting_key, 'class', 'elementor-icon-list-text txt_color' );
 
 					$this->add_inline_editing_attributes( $repeater_setting_key );
 					$migration_allowed = Icons_Manager::is_migration_allowed();
