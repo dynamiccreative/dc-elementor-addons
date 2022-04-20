@@ -4,7 +4,7 @@
  * Plugin Name: Elementor Custom Widgets Extension
  * Description: DC addons Elementor - Widgets 
  * Plugin URI: https://github.com/bastiendc/dc-elementor-addons
- * Version: 0.23
+ * Version: 0.24
  * Author: Dynamic Creative
  * Author URI: https://www.dynamic-creative.com
  * Text Domain: elementor-customwidgets-extension
