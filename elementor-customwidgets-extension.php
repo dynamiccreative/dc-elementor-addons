@@ -71,15 +71,15 @@ class Elementor_CustomWidgets_Extension {
    }
    
    public function widget_styles_admin() { 
-      wp_enqueue_style( 'dcael-css-admin',  plugins_url() . '/dc-elementor-addons/admin-el.css' );
+      wp_enqueue_style( 'dcael-css-admin',  plugin_dir_url( __FILE__ ) . 'admin-el.css' );
    }
 
    public function widget_styles() { 
-      wp_enqueue_style( 'dcael-css',  plugins_url() . '/dc-elementor-addons/dcael.css' );
+      wp_enqueue_style( 'dcael-css',  plugin_dir_url( __FILE__ ) . 'dcael.css' );
    }
     
     public function widget_scripts() { 
-      wp_enqueue_script( 'dcael-js',  plugins_url() . '/dc-elementor-addons/dcael.js' );
+      wp_enqueue_script( 'dcael-js',  plugin_dir_url( __FILE__ ) . 'dcael.js' );
    }
    
    public function init_widgets() {
