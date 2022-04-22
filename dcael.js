@@ -1,4 +1,4 @@
-(function($) {
+jQuery(document).ready(function($) {
 
 // WIDGET CARTE MENU
 $('.widget-carte-menu .bt-lb button').click(function(e){
@@ -38,4 +38,4 @@ function popOff(){
     });
 }    
     
-})(jQuery);
+});
