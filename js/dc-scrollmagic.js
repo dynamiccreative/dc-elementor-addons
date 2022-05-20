@@ -3,12 +3,12 @@ class WidgetScrollmagic extends elementorModules.frontend.handlers.Base {
 	getDefaultSettings() {
         return {
             selectors: {
-                container: '.dc-scrollmagic',
+                wrapper: '.dc-scrollmagic',
+                loader: '.sm-loader',
             },
             attributes: {
                 dataImages: 'images',
                 dataTrigger: 'trigger',
-                //dataDuration: 'duration',
                 dataRepaires: 'repaires',
                 dataDurations: 'durations'
             }
@@ -17,33 +17,25 @@ class WidgetScrollmagic extends elementorModules.frontend.handlers.Base {
 
 	getDefaultElements() {
 	    const selectors = this.getSettings( 'selectors' );
-	        
-	    
         var elements = {
-            $smContainer: this.$element.find( selectors.container )
+            $smWrapper: this.$element.find( selectors.wrapper ),
+            $smLoader: this.$element.find( selectors.loader )
         };
-
-
         return elements;
 	}
 
-
 	initSlider() {
-		var $sm = this.elements.$smContainer,
+		var $sm = this.elements.$smWrapper,
+			$loader = this.elements.$smLoader,
             settings = this.getSettings(),
             images = $sm.data(settings.attributes.dataImages),
-            //duration = $sm.data(settings.attributes.dataDuration),
             durations = $sm.data(settings.attributes.dataDurations),
             duration = durations[0],
             repaires = $sm.data(settings.attributes.dataRepaires),
+            w = jQuery( window ).width(),
             trigger = $sm.data(settings.attributes.dataTrigger);
-           
 
-        //var hWrapper = $sm.height();
-        //var r = duration / hWrapper;
-        //console.log(durations) 
-        var w = jQuery( window ).width();
-
+        // hauteur trigger responsive
         switch (true) {
         	case w > 1024:
         		duration = durations[0];
@@ -56,18 +48,33 @@ class WidgetScrollmagic extends elementorModules.frontend.handlers.Base {
         		break;
         }
         if (!duration) duration = 300;
-        /*if (!$slider.length) {
-            return;
-        }  */  
 
-		/*this.swiper = new Swiper(
-            $slider,
-            $slider.data(this.getSettings('attributes.dataSliderOptions'))
-        );*/
+        // prelaod
+		function preloadImages(urls, allImagesLoadedCallback){
+			var loadedCounter = 0;
+			var toBeLoadedNumber = urls.length;
+			urls.forEach(function(url){
+				preloadImage(url, function(){
+					loadedCounter++;
+					console.log('Number of loaded images: ' + loadedCounter);
+					if(loadedCounter == toBeLoadedNumber){
+						allImagesLoadedCallback();
+					}
+				});
+			});
+			function preloadImage(url, anImageLoadedCallback){
+				var img = new Image();
+				img.onload = anImageLoadedCallback;
+				img.src = url;
+			}
+		}
 
-        //var images = this.getSettings('attributes.dataImages');
-        console.log(duration, trigger, repaires)
-        //var el = $sm.getElementsByClassName('myimg')[0];
+		preloadImages(images, function(){
+			console.log('All images were loaded');
+			$loader.hide();
+		});
+
+		// animation
         var obj = {curImg: 0};
 
             var tween = gsap.to(obj, 0.5,
@@ -91,26 +98,16 @@ class WidgetScrollmagic extends elementorModules.frontend.handlers.Base {
             var scene = new ScrollMagic.Scene({triggerElement: trigger, duration: duration})
                         .setTween(tween)
                         .addTo(controller);
+            // debug            
             if (repaires == 'yes') scene.addIndicators();
-
 	}
 
-	/*updateTestWidgetContent(){
-		console.log(this.getElementSettings( 'nb_slide' ));
-	}*/
-
 	onInit(){ 
-		//this.updateTestWidgetContent();
 		elementorModules.frontend.handlers.Base.prototype.onInit.apply(this, arguments);
 
         this.initSlider();
 	}
 
-	/*onElementChange( propertyName ) {
-		if ( 'nb_slide' === propertyName ) {
-			this.updateTestWidgetContent();
-		}
-	}*/
 }
 
 // When the frontend of Elementor is created, add our handler

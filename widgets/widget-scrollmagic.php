@@ -208,10 +208,12 @@ class Widget_Scrollmagic extends Widget_Base {
         if ( empty( $slides ) ) {
 			return;
 		}
-        
+        $loaderImg = plugin_dir_url( __DIR__ ).'img/loader.svg';
 		?>
+
         <div id="trigger-<?php echo $this->get_id(); ?>"></div>
 		<div <?php echo $this->get_render_attribute_string('container'); ?>>
+            <div class="sm-loader"><img src="<?php echo $loaderImg; ?>" width="38" height="38"/></div>
 			<div <?php echo $this->get_render_attribute_string('wrapper'); ?>>
 				<img <?php echo $this->get_render_attribute_string('img'); ?> src="<?php echo $slides[0]; ?>">
 			</div>
