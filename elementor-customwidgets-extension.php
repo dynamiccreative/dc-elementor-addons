@@ -4,7 +4,7 @@
  * Plugin Name: Elementor Custom Widgets Extension
  * Description: DC addons Elementor - Widgets 
  * Plugin URI: https://github.com/bastiendc/dc-elementor-addons
- * Version: 0.25
+ * Version: 0.26
  * Author: Dynamic Creative
  * Author URI: https://www.dynamic-creative.com
  * Text Domain: elementor-customwidgets-extension
@@ -96,6 +96,8 @@ class Elementor_CustomWidgets_Extension {
       require_once('widgets/widget-bulle.php' );
       require_once('widgets/widget-bloc-picto-text.php' ); 
       require_once('widgets/widget-bloc-carre.php' );
+      require_once('widgets/widget-gallery-swiper.php' );
+      require_once('widgets/slider-post.php' );
       require_once('widgets/widget-scrollmagic.php' );
       // Register widget
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Loop_Post() );
@@ -108,7 +110,9 @@ class Elementor_CustomWidgets_Extension {
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Temoin() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bulle() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bloc_Picto_Text() ); 
-      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bloc_Carre() ); 
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bloc_Carre() );
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Gallery_Swiper() );
+      \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Post() );
       \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Scrollmagic() );
 
    }

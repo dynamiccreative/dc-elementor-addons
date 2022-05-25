@@ -1,0 +1,46 @@
+.dc-slider-container {
+    --esp-next : -2.5em;
+    --esp-next-left : 2.5em;
+    --esp-top : -2em;
+    --esp-rd-top : -2.25em; 
+}
+.slider-nav-horizontal-centerout .elementor-swiper-button-next {right: var(--esp-next);}
+.slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: var(--esp-next);}
+.slider-nav-vertical-bottom .elementor-swiper-button {top: auto; bottom: var(--esp-top); transform: translateY(0);}
+.slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-top); transform: translateY(0); }
+.slider-nav-horizontal-right .elementor-swiper-button-prev {left: auto; right:var(--esp-next-left); }
+.slider-nav-horizontal-left .elementor-swiper-button-next {right: auto; left:var(--esp-next-left); }
+
+.elementor-view-framed .slider-nav-horizontal-left .elementor-swiper-button-next {left:var(--esp-next-left); }
+.elementor-view-framed .slider-nav-horizontal-right .elementor-swiper-button-prev {right:var(--esp-next-left); }
+.elementor-view-framed .slider-nav-vertical-bottom .elementor-swiper-button {bottom: var(--esp-rd-top);}
+.elementor-view-framed .slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-rd-top);}
+
+.dc-slider-container .elementor-swiper-button {font-size: 25px;}
+.dc-slider-container .elementor-swiper-button i {width: 1em; height: 1em; position: relative; display: block;}
+.dc-slider-container .elementor-swiper-button i:before {position: absolute; left: 50%; transform: translateX(-50%);}
+.elementor-view-framed .dc-slider-container .elementor-swiper-button {padding: .25em; border: 2px solid #818a91; background-color: transparent;}
+.elementor-shape-circle .dc-slider-container .elementor-swiper-button {
+  border-radius: 50%;
+}
+
+.dc-slider-container.linear-animation .swiper-wrapper { transition-timing-function: linear; }
+.dc-slider-container.linear-animation .elementor-swiper-button, .dc-slider-container.linear-animation .swiper-pagination, .dc-slider-container.linear-animation .swiper-scrollbar {display: none;}
+.dc-slider-container.linear-animation img {pointer-events: none;}
+
+/*.swiper-slide.d-flex {display: flex;}*/
+.swiper-slide.item-colonne > div {width: 100%;}
+/*.swiper-slide.d-flex > div.item-ct {padding-left: 20px;}*/
+
+.item-img {position:relative;}
+.item-img .item-cat {position:absolute; top:5px; left:0; width:100%;}
+a.item-btn {display:inline-block;}
+
+/*flex*/
+.d-flex {display: flex;}
+
+/*responsive*/
+@media screen and (min-width: 768px) {
+	.d-md-flex {display: flex;}
+	.swiper-slide.item-colonne > div {width:50%}
+}
