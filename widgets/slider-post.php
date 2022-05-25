@@ -792,7 +792,7 @@ class Widget_Slider_Post extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} .item-title' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .item-title a' => 'color: {{VALUE}};',
 				],
 			]
 		);
@@ -1393,7 +1393,7 @@ class Widget_Slider_Post extends Widget_Base {
 		<?php
 	}
 
-	protected function render_title() {
+	protected function render_title($l) {
 		/*if ( ! $this->get_settings( 'show_title' ) ) {
 			return;
 		}*/
@@ -1402,7 +1402,7 @@ class Widget_Slider_Post extends Widget_Base {
 		$tag = $this->get_settings( 'title_tag' );
 		?>
 		<<?php Utils::print_validated_html_tag( $tag ); ?> class="item-title">
-		<?php the_title(); ?>
+		<a href="<?php echo $l;?>"><?php the_title(); ?></a>
 		</<?php Utils::print_validated_html_tag( $tag ); ?>>
 		<?php
 	}
@@ -1602,8 +1602,8 @@ class Widget_Slider_Post extends Widget_Base {
 						}*/
 					?>
 					<div <?php echo $this->get_render_attribute_string('slide'); ?>>
-		        		<div class="item-img">
-                            <?php the_post_thumbnail($settings['thumbnail_size'], ['style' => $full_width]); ?>
+		        		<div class="item-img"><a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail($settings['thumbnail_size'], ['style' => $full_width]); ?></a>
                             <?php if ($cat_img && $tab_cat && $display_cat) {
                             echo $s_cat;
                             }?>
@@ -1616,7 +1616,7 @@ class Widget_Slider_Post extends Widget_Base {
                             ?>
 			        		<?php 
 			        			if ($metatop) $this->render_meta_data();
-			        			$this->render_title();
+			        			$this->render_title(get_permalink());
 			        			if (!$metatop) $this->render_meta_data();
 			        		?>
 			        		<?php if ($excerpt) { ?>
