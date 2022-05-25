@@ -4,6 +4,10 @@
     --esp-top : -2em;
     --esp-rd-top : -2.25em; 
 }
+/*reset*/
+.dc-slider-container p, .dc-slider-container h3, .dc-slider-container h2 {margin:0;}
+.dc-slider-container figcaption {font-style: normal;}
+/**/
 .slider-nav-horizontal-centerout .elementor-swiper-button-next {right: var(--esp-next);}
 .slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: var(--esp-next);}
 .slider-nav-vertical-bottom .elementor-swiper-button {top: auto; bottom: var(--esp-top); transform: translateY(0);}
