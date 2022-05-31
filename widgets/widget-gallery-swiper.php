@@ -307,6 +307,77 @@ class Widget_Gallery_Swiper extends Widget_Base {
                 ),
             )
         );
+        
+        $this->add_responsive_control(
+            'padding_bouton',
+            array(
+                'label' => __('Space Button Horizontal', 'elementor'),
+                'type' => Controls_Manager::SLIDER,
+                'default' => ['unit' => 'px', 'size' => 25],
+                'range' => array(
+                    	'px' => [
+						'min' => 0,
+						'max' => 100,
+					]
+                ),
+                'condition' => [
+					'display_navigation' => 'yes',
+				],
+                'selectors' => [
+					'{{WRAPPER}} .slider-nav-horizontal-centerout .elementor-swiper-button-next' => 'right: -{{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elementor-swiper-button-next' => 'right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .slider-nav-horizontal-centerout .elementor-swiper-button-prev' => 'left: -{{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .elementor-swiper-button-prev' => 'left: {{SIZE}}{{UNIT}};',
+				],
+				
+            )
+        );
+        
+        $this->add_responsive_control(
+            'padding_bouton_vertical',
+            array(
+                'label' => __('Space Button Vertical', 'elementor'),
+                'type' => Controls_Manager::SLIDER,
+                'default' => ['unit' => 'px', 'size' => 25],
+                'range' => array(
+                    	'px' => [
+						'min' => 0,
+						'max' => 100,
+					]
+                ),
+                'condition' => [
+					'display_navigation' => 'yes',
+				],
+                'selectors' => [
+					'{{WRAPPER}} .slider-nav-vertical-bottom .elementor-swiper-button' => 'bottom: -{{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .slider-nav-vertical-top .elementor-swiper-button' => 'top: -{{SIZE}}{{UNIT}};',
+				],
+				
+            )
+        );
+        
+        $this->add_responsive_control(
+            'padding_bouton_between',
+            array(
+                'label' => __('Space Between Button', 'elementor'),
+                'type' => Controls_Manager::SLIDER,
+                'default' => ['unit' => 'px', 'size' => 25],
+                'range' => array(
+                    	'px' => [
+						'min' => 0,
+						'max' => 200,
+					]
+                ),
+                'condition' => [
+					'display_navigation' => 'yes',
+				],
+                'selectors' => [
+					'{{WRAPPER}} .slider-nav-horizontal-right .elementor-swiper-button-prev' => 'left:auto; right: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .slider-nav-horizontal-left .elementor-swiper-button-next' => 'right:auto; left: {{SIZE}}{{UNIT}};',
+				],
+				
+            )
+        );
 
         $this->add_control(
 			'other_options',
@@ -770,7 +841,7 @@ class Widget_Gallery_Swiper extends Widget_Base {
             		'spaceBetween' => $espSlideTablet
             	),
             	360 => array(
-            		'slidesPerView' => $ndSlideMobile,
+            		'slidesPerView' => $nbSlideMobile,
             		'spaceBetween' => $espSlideMobile
             	));
 		if ($settings['nb_slide']['size'] == 1) $breakpoints = false;

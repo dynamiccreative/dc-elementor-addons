@@ -4,17 +4,18 @@
     --esp-top : -2em;
     --esp-rd-top : -2.25em; 
 }
-.slider-nav-horizontal-centerout .elementor-swiper-button-next {right: var(--esp-next);}
-.slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: var(--esp-next);}
-.slider-nav-vertical-bottom .elementor-swiper-button {top: auto; bottom: var(--esp-top); transform: translateY(0);}
-.slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-top); transform: translateY(0); }
-.slider-nav-horizontal-right .elementor-swiper-button-prev {left: auto; right:var(--esp-next-left); }
-.slider-nav-horizontal-left .elementor-swiper-button-next {right: auto; left:var(--esp-next-left); }
+.dc-slider-container img {display:block; width: 100%;}
+/*.slider-nav-horizontal-centerout .elementor-swiper-button-next {right: var(--esp-next);}
+.slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: var(--esp-next);}*/
+.slider-nav-vertical-bottom .elementor-swiper-button {top: auto; /*bottom: var(--esp-top);*/ transform: translateY(0);}
+.slider-nav-vertical-top .elementor-swiper-button {/*top: var(--esp-top);*/ transform: translateY(0); }
+/*.slider-nav-horizontal-right .elementor-swiper-button-prev {left: auto; right:var(--esp-next-left); }
+.slider-nav-horizontal-left .elementor-swiper-button-next {right: auto; left:var(--esp-next-left); }*/
 
-.elementor-view-framed .slider-nav-horizontal-left .elementor-swiper-button-next {left:var(--esp-next-left); }
+/*.elementor-view-framed .slider-nav-horizontal-left .elementor-swiper-button-next {left:var(--esp-next-left); }
 .elementor-view-framed .slider-nav-horizontal-right .elementor-swiper-button-prev {right:var(--esp-next-left); }
 .elementor-view-framed .slider-nav-vertical-bottom .elementor-swiper-button {bottom: var(--esp-rd-top);}
-.elementor-view-framed .slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-rd-top);}
+.elementor-view-framed .slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-rd-top);}*/
 
 .dc-slider-container .elementor-swiper-button {font-size: 25px;}
 .dc-slider-container .elementor-swiper-button i {width: 1em; height: 1em; position: relative; display: block;}
@@ -31,3 +32,8 @@
 .dc-slider-swiper .bloc-caption {}
 .dc-slider-swiper figcaption {display:inline-block;}
 .dc-slider-swiper.caption_top .bloc-caption {position: absolute; top:0; left:0; width:100%;}
+
+@media only screen and (max-width : 1024px) {
+    .slider-nav-horizontal-centerout .elementor-swiper-button-next {right:15px!important;}
+    .slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: 15px!important;}
+}

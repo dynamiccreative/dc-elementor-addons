@@ -8,17 +8,17 @@
 .dc-slider-container p, .dc-slider-container h3, .dc-slider-container h2 {margin:0;}
 .dc-slider-container figcaption {font-style: normal;}
 /**/
-.slider-nav-horizontal-centerout .elementor-swiper-button-next {right: var(--esp-next);}
-.slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: var(--esp-next);}
-.slider-nav-vertical-bottom .elementor-swiper-button {top: auto; bottom: var(--esp-top); transform: translateY(0);}
-.slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-top); transform: translateY(0); }
-.slider-nav-horizontal-right .elementor-swiper-button-prev {left: auto; right:var(--esp-next-left); }
-.slider-nav-horizontal-left .elementor-swiper-button-next {right: auto; left:var(--esp-next-left); }
+/*.slider-nav-horizontal-centerout .elementor-swiper-button-next {right: var(--esp-next);}
+.slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: var(--esp-next);}*/
+.slider-nav-vertical-bottom .elementor-swiper-button {top: auto; /*bottom: var(--esp-top);*/ transform: translateY(0);}
+.slider-nav-vertical-top .elementor-swiper-button {/*top: var(--esp-top);*/ transform: translateY(0); }
+/*.slider-nav-horizontal-right .elementor-swiper-button-prev {left: auto; right:var(--esp-next-left); }
+.slider-nav-horizontal-left .elementor-swiper-button-next {right: auto; left:var(--esp-next-left); }*/
 
-.elementor-view-framed .slider-nav-horizontal-left .elementor-swiper-button-next {left:var(--esp-next-left); }
+/*.elementor-view-framed .slider-nav-horizontal-left .elementor-swiper-button-next {left:var(--esp-next-left); }
 .elementor-view-framed .slider-nav-horizontal-right .elementor-swiper-button-prev {right:var(--esp-next-left); }
 .elementor-view-framed .slider-nav-vertical-bottom .elementor-swiper-button {bottom: var(--esp-rd-top);}
-.elementor-view-framed .slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-rd-top);}
+.elementor-view-framed .slider-nav-vertical-top .elementor-swiper-button {top: var(--esp-rd-top);}*/
 
 .dc-slider-container .elementor-swiper-button {font-size: 25px;}
 .dc-slider-container .elementor-swiper-button i {width: 1em; height: 1em; position: relative; display: block;}
