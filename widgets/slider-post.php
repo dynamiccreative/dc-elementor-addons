@@ -1258,7 +1258,7 @@ class Widget_Slider_Post extends Widget_Base {
 					],
 				],
 				'selectors' => [
-					'{{WRAPPER}} .item-link' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .item-link' => 'padding-top: {{SIZE}}{{UNIT}};',
 				],
                 'separator' => 'before',
 			]
@@ -1529,7 +1529,7 @@ class Widget_Slider_Post extends Widget_Base {
 		$autoplay = $settings['autoplay'] === 'yes' ? $autoplay_linear_animation : false;
 		$centered = $settings['centered'] === 'yes' ? true : false;
 		$metatop = $settings['meta_top'] === 'yes' ? true : false;
-		$colonne = $settings['colonne'] === 'yes' ? 'item-colonne d-md-flex' : '';
+		$colonne = $settings['colonne'] === 'yes' ? 'item-colonne d-md-flex' : 'd-flex flex-column';
 		$full_width = $settings['image_full'] === 'yes' ? 'width:100%; height:auto;' : '';
         $display_cat = $settings['display_cat'] === 'yes' ? true : false;
         $cat_img = $settings['cat_img'] === 'yes' ? true : false;

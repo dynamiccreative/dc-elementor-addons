@@ -40,8 +40,13 @@
 .item-img .item-cat {position:absolute; top:5px; left:0; width:100%;}
 a.item-btn {display:inline-block;}
 
+.swiper-slide.flex-column {height: auto;}
+.swiper-slide.flex-column .item-ct { display: flex; flex-direction: column; height: 100%; }
+.swiper-slide.flex-column .item-link {margin-top: auto;}
+
 /*flex*/
 .d-flex {display: flex;}
+.flex-column {flex-direction: column;}
 
 /*responsive*/
 @media screen and (min-width: 768px) {
