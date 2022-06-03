@@ -27,7 +27,11 @@ function add_elementor_widget_categories( $elements_manager ) {
       ]
    );
 }
-add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );
+/* Languages */
+function my_plugin_locale() {
+    load_plugin_textdomain('elementor-customwidgets-extension', false, dirname( plugin_basename( __FILE__ ) ) . '/languages');
+}
+add_action( 'plugins_loaded', 'my_plugin_locale' );
 
 class Elementor_CustomWidgets_Extension {
 
