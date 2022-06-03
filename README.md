@@ -1,5 +1,6 @@
 # DC ELEMENTOR ADD-ONS
-Wordpress elementor widget plugin
+Wordpress elementor widget plugin.
+
 A widget collection for Elementor page builder plugin.
 
 ## Add-ons
