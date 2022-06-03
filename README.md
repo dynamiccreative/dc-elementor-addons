@@ -12,6 +12,8 @@ A widget collection for Elementor page builder plugin.
 * Bloc picto text
 * Bloc carre
 * Scrollmagic
+* Slider Post
+* Slider Gallery
 
 ## Author
 * [Dynamic Creative](https://dynamic-creative.com) - Agence digitale & informatique
