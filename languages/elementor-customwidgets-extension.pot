@@ -1,0 +1,45 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Elementor Custom Widgets Extension\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-03 06:48+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.2; wp-6.0\n"
+"X-Domain: elementor-customwidgets-extension"
+
+#. Description of the plugin
+msgid "DC addons Elementor - Widgets"
+msgstr ""
+
+#. Author of the plugin
+msgid "Dynamic Creative"
+msgstr ""
+
+#. Name of the plugin
+msgid "Elementor Custom Widgets Extension"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/bastiendc/dc-elementor-addons"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.dynamic-creative.com"
+msgstr ""
+
+#: widgets/slider-post.php:1696
+msgid "Read More"
+msgstr ""
+
+#: widgets/slider-post.php:1363
+msgid "Size"
+msgstr ""

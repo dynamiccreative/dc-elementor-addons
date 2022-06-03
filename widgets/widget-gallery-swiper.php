@@ -715,7 +715,7 @@ class Widget_Gallery_Swiper extends Widget_Base {
 					],
 					'color' => [
 						'global' => [
-							'default' => Global_Colors::COLOR_ACCENT,
+							//'default' => Global_Colors::COLOR_ACCENT,
 						],
 					],
 				],

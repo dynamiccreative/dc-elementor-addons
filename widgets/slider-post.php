@@ -1360,7 +1360,7 @@ class Widget_Slider_Post extends Widget_Base {
         $this->add_control(
 			'arrows_size',
 			[
-				'label' => esc_html__( 'Size', 'elementor' ),
+				'label' => esc_html__( 'Size', 'elementor-customwidgets-extension' ),
 				'type' => Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
@@ -1693,7 +1693,7 @@ class Widget_Slider_Post extends Widget_Base {
 			        		<?php if ($excerpt) { ?>
 			        		<div class="item-description"><?php the_excerpt(); ?></div>
 			        		<?php } ?>
-			        		<div class="item-link"><a href="<?php the_permalink(); ?>" <?php echo $this->get_render_attribute_string('button'); ?>><?php _e("En savoir plus", "dynamic-child"); ?></a></div>
+			        		<div class="item-link"><a href="<?php the_permalink(); ?>" <?php echo $this->get_render_attribute_string('button'); ?>><?php _e("Read More", "elementor-customwidgets-extension"); ?></a></div>
 		        		</div>
 		        	</div>
 	        		<?php
