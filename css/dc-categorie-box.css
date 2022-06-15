@@ -1,0 +1,14 @@
+.elementor-categorie-box img {display: block;}
+.elementor-categorie-box .item-title {margin: 0;}
+.elementor-categorie-box .ct {height: 100%;}
+.elementor-categorie-box .ct:not(.item-colonne) .item-text {height: 100%;}
+.elementor-categorie-box .item-colonne > div {flex: 0 0 auto; width: 50%; padding: 0 10px;}
+.elementor-categorie-box.image-right .item-img {order: 1;}
+.elementor-categorie-box.image-right .item-text {order: 0;}
+.elementor-categorie-box .item-img {text-align: center;}
+
+@media screen and (max-width: 767px) {
+	.elementor-categorie-box .item-colonne > div {flex: 0 0 auto; width: 100%;}
+	.elementor-categorie-box .item-img-right {flex: 1 0 0%; order: -1;}
+	.elementor-categorie-box img {display: inline-block;}
+}
