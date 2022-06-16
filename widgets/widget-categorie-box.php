@@ -1,4 +1,9 @@
 <?php
+/**
+ * DCAEL Categorie Post.
+ *
+ * @version 0.1
+ */
 
 namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) {
@@ -78,57 +83,6 @@ class Widget_Categorie_Box extends Widget_Base {
 				//'separator' => 'before',
 			]
 		);
-
-		/*$this->add_responsive_control(
-            'nb_col',
-            array(
-                'label' => __('Colonne', 'elementor'),
-                'type' => Controls_Manager::SLIDER,
-                'range' => array(
-                    	'px' => [
-						'min' => 1,
-						'max' => 4,
-					]
-                ),
-                'devices' => [ 'desktop', 'tablet', 'mobile' ],
-				'desktop_default' => [
-					'size' => 2,
-					'unit' => 'px',
-				],
-				'tablet_default' => [
-					'size' => 2,
-					'unit' => 'px',
-				],
-				'mobile_default' => [
-					'size' => 1,
-					'unit' => 'px',
-				],
-            )
-        );*/
-
-        /*$this->add_responsive_control(
-			'nb_col',
-			[
-				'type' => Controls_Manager::CHOOSE,
-				'label' => esc_html__( 'Colonne', 'elementor' ),
-				'options' => [
-					'left' => [
-						'title' => esc_html__( 'Left', 'plugin-name' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'plugin-name' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'plugin-name' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'devices' => [ 'desktop', 'tablet' ],
-				'prefix_class' => 'content-align-%s',
-			]
-		);*/
 
 		$this->add_control(
 			'nb_col',
@@ -625,7 +579,7 @@ class Widget_Categorie_Box extends Widget_Base {
                     		<?php $this->render_title($url, $item['bloc_title']); ?>
                         	<div class="item-desc"><?php echo $item['bloc_desc']; ?></div>
                         	<div class="item-link mt-auto">
-                        		<a class="item-btn" href="<?php echo $url; ?>"><?php echo $settings['bouton_text']; ?></a>
+                        		<a class="item-btn elementor-button elementor-animation-<?php echo $settings['hover_animation'];?>" href="<?php echo $url; ?>"><?php echo $settings['bouton_text']; ?></a>
                         	</div>
                         </div>                 
                     </div>
