@@ -1,0 +1,7 @@
+.widget-info-icon * {line-height: 1;}
+.widget-info-icon a {text-decoration: none;}
+.widget-info-icon .ct { display: inline-flex; align-items: center; overflow:hidden; width: auto; -webkit-transition: max-width 0.5s; transition: max-width 0.5s; }
+.widget-info-icon .ct:hover { max-width: 300px!important; }
+.widget-info-icon .wi-icon { margin-right: 10px; display: flex; align-items: center; }
+.widget-info-icon .wi-icon span {text-align: center;}
+.widget-info-icon .wi-txt { white-space: nowrap; padding-right: 20px; }
