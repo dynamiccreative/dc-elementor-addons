@@ -2,31 +2,18 @@
 /**
  * DCAEL Slider Post.
  *
- * @version 0.1
+ * @version 0.11
  */
 
-/*
-add_filter( 'excerpt_more', [ $this, 'filter_excerpt_more' ], 20 );
-add_filter( 'excerpt_length', [ $this, 'filter_excerpt_length' ], 20 );
-*/
 namespace Elementor;
-//namespace DcElementorAddons\Widgets;
+
 
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 use ElementorPro\Base\Base_Widget;
-/*use Elementor\Group_Control_Image_Size;
-use Elementor\Group_Control_Typography;
-use Elementor\Utils;
-use ElementorPro\Base\Base_Widget;
-use ElementorPro\Modules\QueryControl\Module as Module_Query;
-use ElementorPro\Modules\QueryControl\Controls\Group_Control_Related;
-use Elementor\Controls_Manager;*/
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
-//require_once( plugin_dir_url( __DIR__ ).'base/common-widget.php');
+
+if ( ! defined( 'ABSPATH' ) ) {	exit; }
 
 /**
  * Elementor Poste Widget.
@@ -36,9 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.1
  */
 class Widget_Slider_Post extends Widget_Base {
-
-    //use Common_Widget;  
-    //use DcElementorAddons\Base\DC_Common_Widget;
 
 	public function __construct($data = [], $args = null) {
 	    parent::__construct($data, $args);
@@ -203,8 +187,6 @@ class Widget_Slider_Post extends Widget_Base {
 				'default'     => 'post',
 				//'label_block' => true,
 				'options'     => $post_types,
-				//'separator'   => 'after',
-				//'condition'   => array(	'query_type' => 'custom',),
 			)
 		);
 
@@ -439,17 +421,6 @@ class Widget_Slider_Post extends Widget_Base {
             )
         );
 
-        /*$this->add_control(
-			'show_title',
-			[
-				'label' => esc_html__( 'Show Title', 'elementor-pro' ),
-				'type' => Controls_Manager::SWITCHER,
-				'default' => 'yes',
-				'label_off' => esc_html__( 'Off', 'elementor-pro' ),
-				'label_on' => esc_html__( 'On', 'elementor-pro' ),
-			]
-		);*/
-
         $this->add_control(
 			'title_tag',
 			[
@@ -468,7 +439,6 @@ class Widget_Slider_Post extends Widget_Base {
 				],
 				'default' => 'h3',
 				'separator' => 'before',
-				//'condition' => ['show_title' => 'yes',],
 			]
 		);
         
@@ -1519,8 +1489,6 @@ class Widget_Slider_Post extends Widget_Base {
 			}
 		}
         
-        
-
 		// SLIDER
 		$nav = $settings['display_navigation'] === 'yes' ? array('nextEl' => '.els-next-'.$this->get_id(),'prevEl' => '.els-prev-'.$this->get_id()) : false;
 		$pag = $settings['display_pagination'] === 'yes' ? array('el' => '.swiper-pagination','clickable' => true,) : false;
@@ -1634,12 +1602,7 @@ class Widget_Slider_Post extends Widget_Base {
                                 //var_dump($tax->name);
                                 $terms = get_the_terms( get_the_ID(), $tax->name );
                                 if ($terms) {
-                                    //var_dump($terms[0]->name);
                                     $tab_cat[] = $terms[0]->name;
-                                    /*foreach ( $terms as $t_index => $t_obj ) {
-                                        //var_dump($t_obj->slug);
-                                        var_dump($t_obj->name);
-                                    }*/
                                 }
                                 //var_dump($terms);
                             }
@@ -1648,29 +1611,9 @@ class Widget_Slider_Post extends Widget_Base {
                             $s_cat .= '<div class="cat-name">'.$c.'</div>';
                         }
                         $s_cat .= '</div>';
-                        //print($s_cat);
                     }
         
-        
-			        	/*if ($post_type == 'post') {
-			        		$category = get_the_category(); 
-							echo $category[0]->cat_name;
-						} else {
-							//$post = get_post( $post );
-							echo get_the_ID();//$post->ID;
-							echo $post_type;
-							//$terms = get_the_terms( get_the_ID(),  );
-							//var_dump($terms);
-							//echo $first_term_name;
-							if (!empty($terms)) {
-							   if(!is_wp_error( $terms )) {
-							       //this line effectively returns the first available term object if there is one.
-							       echo $terms[0]->name;
-							   } else {
-							       echo $terms->name; //This returns the WP_Error object
-							   }       
-							}
-						}*/
+       
 					?>
 					<div <?php echo $this->get_render_attribute_string('slide'); ?>>
 		        		<div class="item-img"><a href="<?php the_permalink(); ?>">

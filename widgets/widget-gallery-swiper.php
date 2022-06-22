@@ -2,14 +2,11 @@
 /**
  * DCAEL Gallery Swiper.
  *
- * @version 0.1
+ * @version 0.11
  */
 
-//https://code.elementor.com/classes/elementor-widget_image_carousel/
 namespace Elementor;
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+if ( ! defined( 'ABSPATH' ) ) {	exit; }
 
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
@@ -38,7 +35,6 @@ class Widget_Gallery_Swiper extends Widget_Base {
 		return __( 'Gallery Swiper', 'elementor' );
 	}
 	public function get_icon() {
-		// Icon name from the Elementor font file, as per http://dtbaker.net/web-development/creating-your-own-custom-elementor-widgets/
 		return 'dae-icon eicon-slides';
 	}
 	
@@ -55,17 +51,7 @@ class Widget_Gallery_Swiper extends Widget_Base {
 				'label' => esc_html__( 'Slider Content', 'elementor' ),
 			]
 		);
-		
-		/*$this->add_control(
-			'some_text',
-			[
-				'label' => __( 'Classe CSS', 'elementor-custom-element' ),
-				'type' => Controls_Manager::TEXT,
-				'default' => '',
-				'title' => __( 'Enter some text', 'elementor-custom-element' ),
-			]
-		);*/
-       
+		       
         $this->add_control(
 			'carousel',
 			[
@@ -126,16 +112,12 @@ class Widget_Gallery_Swiper extends Widget_Base {
                 'label' => __('Slide per view', 'elementor'),
                 'type' => Controls_Manager::SLIDER,
                 'default' => ['unit' => 'px', 'size' => 1],
-                //'frontend_available' => true,
-                //'label_block' => true,
-                //'render_type' => 'template',
                 'range' => array(
                     	'px' => [
 						'min' => 1,
 						'max' => 8,
 					]
                 ),
-                //'selectors' => ['{{WRAPPER}}' => '--e-image-carousel-slides-to-show: {{VALUE}}',],
             )
         );
 
@@ -757,8 +739,6 @@ class Widget_Gallery_Swiper extends Widget_Base {
 		);
 
 		$this->end_controls_section();
-
-
 	}
 
 	private function get_image_caption( $attachment ) {
@@ -780,32 +760,9 @@ class Widget_Gallery_Swiper extends Widget_Base {
 
 		return $attachment_post->post_content;
 	}
-
-	/*private function get_setting_value($name)
-    {
-        if (isset($this->settings[$name]) && !empty($this->settings[$name])) {
-            return $this->settings[$name];
-        }
-
-        return false;
-    }
-    
-    private function get_prepared_settings() {
-        return array(
-        	'pagination' => $this->get_setting_value('display_pagination') === 'yes' ? array('el' => '.swiper-pagination') : false,
-        	'navigation' => $this->get_setting_value('display_navigation') === 'yes' ? array('nextEl' => '.els-next-'.$this->get_id(),'prevEl' => '.els-prev-'.$this->get_id()) : false,
-       	);
-    }*/
-    
+   
 	protected function render() {
         $settings = $this->get_settings_for_display();
-        //$prepared_settings = $this->get_prepared_settings();
-        $custom_text = $settings['some_text'];
-        $size_img = $settings['image_size'];
-		// get our input from the widget settings.
-		//$custom_text = ! empty( $instance['some_text'] ) ? $instance['some_text'] : ' (no text was entered ) ';
-		//$post_count = ! empty( $instance['posts_per_page'] ) ? (int)$instance['posts_per_page'] : 5;
-        //var_dump($settings('display_navigation'));
 
 		$nav = $settings['display_navigation'] === 'yes' ? array('nextEl' => '.els-next-'.$this->get_id(),'prevEl' => '.els-prev-'.$this->get_id()) : false;
 		$pag = $settings['display_pagination'] === 'yes' ? array('el' => '.swiper-pagination','clickable' => true, 'type' => $settings['style_pagination']) : false;
@@ -845,12 +802,7 @@ class Widget_Gallery_Swiper extends Widget_Base {
             		'spaceBetween' => $espSlideMobile
             	));
 		if ($settings['nb_slide']['size'] == 1) $breakpoints = false;
-		/*if ($nbSlideDesktop != $nbSlideTablet) {
-			array_push($breakpoints, array(1024 => array('slidesPerView' => 2)));
-		}*/
-		//var_dump($breakpoints);
-		//var_dump($nav);
-		//print($settings['autoplay']);
+
         $swiper_options = array(
 		    //'direction'     => 'vertical',
 		    'slidesPerView' => $settings['nb_slide']['size'],
@@ -877,7 +829,6 @@ class Widget_Gallery_Swiper extends Widget_Base {
                     $caption_img,
 	                
                 ),
-                //'data-autoplay-hover' => $prepared_settings['autoplay'] ? $prepared_settings['autoplay_pause_on_hover'] : 'null',
                 'data-swiper-options' => wp_json_encode($swiper_options),
                 'data-text' => $custom_text
             ),
@@ -885,27 +836,32 @@ class Widget_Gallery_Swiper extends Widget_Base {
         		'id' => 'dc-slider-swiper-'.$this->get_id(),
         		'class' => array('dc-slider-container', $settings['navigation_vertical_position'], $settings['navigation_horizontal_position'], $linear_animation)
         	),
-        	'prev_container'  => array(
+        ));
+
+        if ($nav != false) {
+            $this->add_render_attribute( array(
+                'prev_container'  => array(
                 'class' => array(
                     'elementor-swiper-button elementor-swiper-button-prev els-prev-'.$this->get_id()
                  ) 
-            ),
-            'prev' => array(
-                'class' => array(
-                    $settings['navigation_icon_prev']['value']
-                )
-            ),
-            'next_container' => array(
-	            'class' => array(
-		            'elementor-swiper-button elementor-swiper-button-next els-next-'.$this->get_id()
-	            )
-            ),
-            'next' => array(
-	            'class' => array(
-		            $settings['navigation_icon_next']['value']
-	            )
-            ),
-        ));
+                ),
+                'prev' => array(
+                    'class' => array(
+                        $settings['navigation_icon_prev']['value']
+                    )
+                ),
+                'next_container' => array(
+                    'class' => array(
+                        'elementor-swiper-button elementor-swiper-button-next els-next-'.$this->get_id()
+                    )
+                ),
+                'next' => array(
+                    'class' => array(
+                        $settings['navigation_icon_next']['value']
+                    )
+                ),
+            ));    
+        }
         
 
 		if ( empty( $settings['carousel'] ) ) {
@@ -957,24 +913,4 @@ class Widget_Gallery_Swiper extends Widget_Base {
 		
 		<?php
 	}
-	/*
-<div class="elementor-swiper-button elementor-swiper-button-prev">
-				<?php $this->render_swiper_button( 'previous' ); ?>
-				<span class="elementor-screen-only"><?php echo esc_html__( 'Previous', 'elementor' ); ?></span>
-			</div>
-			<div class="elementor-swiper-button elementor-swiper-button-next">
-				<?php $this->render_swiper_button( 'next' ); ?>
-				<span class="elementor-screen-only"><?php echo esc_html__( 'Next', 'elementor' ); ?></span>
-			</div>
-	*/
-	/*private function render_swiper_button( $type ) {
-		$direction = 'next' === $type ? 'right' : 'left';
-
-		$icon_value = 'fas fa-angle-' . $direction;
-
-		Icons_Manager::render_icon( [
-			'library' => 'fa-solid',
-			'value' => $icon_value,
-		], [ 'aria-hidden' => 'true' ] );
-	}*/
 }
