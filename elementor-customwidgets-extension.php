@@ -78,6 +78,7 @@ class Elementor_CustomWidgets_Extension {
         require_once('widgets/widget-scrollmagic.php' );
         require_once('widgets/widget-categorie-box.php' );
         require_once('widgets/widget-info-icon.php' );
+        require_once('widgets/dc-fluent-form.php' );
         // Register widget
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Loop_Post() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Icon_Text() );
@@ -89,6 +90,7 @@ class Elementor_CustomWidgets_Extension {
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Scrollmagic() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Categorie_Box() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Info_Icon() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Fluent_Form() );
     }
 }
 

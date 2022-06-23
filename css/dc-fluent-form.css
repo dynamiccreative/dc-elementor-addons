@@ -1,0 +1,29 @@
+/*
+ff-btn-secondary (next/prev)
+ff-btn-submit(send)
+ff_upload_btn(upload)
+*/
+.dcael-ff-style.btn-border-none [type=button]:focus, .dcael-ff-style.btn-border-none [type=submit]:focus, .dcael-ff-style.btn-border-none button:focus {border:none!important;}
+.dcael-ff-style.border-none .ff-el-form-control, .dcael-ff-style.btn-border-none .ff-btn-submit, .dcael-ff-style.btn-secondary-border-none .ff-btn-secondary, .dcael-ff-style.btn-border-none .step-nav .ff-btn-prev, .dcael-ff-style.btn-border-none .step-nav .ff-btn-next {border:none!important;}
+.dcael-ff-style span.ff_upload_btn {display: inline-block;}
+
+/*radio checkbox*/
+.dcael-ff-style .fluentform {--col1 : #32A2EF;}
+/*.dcael-ff-style .fluentform .ff_list_inline .ff-el-form-check:last-child label.ff-el-form-check-label {margin-bottom:7px!important;}*/
+.dcael-ff-style .ff-el-group input[type="checkbox"], .dcael-ff-style .ff-el-group input[type="radio"] { width: 1em; height: 1em; margin-top: .25em; vertical-align: top; background-color: #fff;
+background-repeat: no-repeat; background-position: center; background-size: contain; border: 1px solid rgba(0,0,0,.25);
+-webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-print-color-adjust: exact; color-adjust: exact;
+}
+.dcael-ff-style .ff-el-group input:checked[type="checkbox"], .dcael-ff-style .ff-el-group input:checked[type="radio"] { background-color: var(--col1); border-color: var(--col1); }
+.dcael-ff-style .ff-el-group input[type="radio"] { border-radius: 50%; }
+.dcael-ff-style .fluentform .ff-el-group.ff_list_inline .ff-el-form-check {margin-bottom: 0;}
+.dcael-ff-style .fluentform .ff_list_inline .ff-el-form-check label.ff-el-form-check-label {margin-bottom:0;}
+
+/**/
+.dcael-ff-style select.ff-el-form-control {background-color:#fff;}
+.dcael-ff-style select.ff-el-form-control option:hover {background-color: var(--col1); color:#fff;}
+.dcael-ff-style .fluentform .ff_upload_btn.ff-btn {background-color: var(--col1); color:#fff;}
+.dcael-ff-style .fluentform .ff_btn_style:focus, .fluentform .ff_btn_style:hover {opacity:1;}
+
+/*special*/
+.dcael-ff-style .fluentform .ff-el-form-control.ff-el-phone {padding-left: 55px!important;}
