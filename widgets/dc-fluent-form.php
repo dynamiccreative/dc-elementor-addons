@@ -1137,6 +1137,51 @@ class Widget_Fluent_Form extends Widget_Base {
 				),
 			)
 		);
+
+		$this->add_control(
+			'step_default_message',
+			array(
+				'label'     => __( 'Step Default', 'elementor' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+        
+        $this->add_control(
+			'step_bgcolor_default',
+			array(
+				'label'     => __( 'Step Background Color', 'elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li::before' => 'background-color: {{VALUE}};',
+				),
+			)
+		);
+        
+        $this->add_control(
+			'step_color_default',
+			array(
+				'label'     => __( 'Step Color', 'elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#008000',
+				'selectors' => array(
+					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li::before' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'title_color_default',
+			array(
+				'label'     => __( 'Title', 'elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '#008000',
+				'selectors' => array(
+					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li' => 'color: {{VALUE}};'
+				),
+			)
+		);
         
         $this->add_control(
 			'step_active_message',
@@ -1172,39 +1217,20 @@ class Widget_Fluent_Form extends Widget_Base {
 				),
 			)
 		);
-        
-        $this->add_control(
-			'step_default_message',
+
+		$this->add_control(
+			'title_color_active',
 			array(
-				'label'     => __( 'Step Default', 'elementor' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-			)
-		);
-        
-        $this->add_control(
-			'step_bgcolor_default',
-			array(
-				'label'     => __( 'Step Background Color', 'elementor' ),
-				'type'      => Controls_Manager::COLOR,
-				'default'   => '',
-				'selectors' => array(
-					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li::before' => 'background-color: {{VALUE}};',
-				),
-			)
-		);
-        
-        $this->add_control(
-			'step_color_default',
-			array(
-				'label'     => __( 'Step Color', 'elementor' ),
+				'label'     => __( 'Title', 'elementor' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#008000',
 				'selectors' => array(
-					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li::before' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li.ff_active' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li.ff_completed' => 'color: {{VALUE}};',
 				),
 			)
 		);
+        
         
         $this->add_control(
 			'step_line',
@@ -1478,17 +1504,16 @@ class Widget_Fluent_Form extends Widget_Base {
 	 */
 	protected function render() {
 		$settings = $this->get_settings_for_display();
-
         //
         $border = !$settings['ff_border_width'] ? 'border-none' : '';
-        $border_button = !$settings['btn_border'] ? 'btn-border-none' : '';
-        $border_button_secondary = !$settings['secondary_button_border'] ? 'btn-secondary-border-none' : '';
+        $border_button = $settings['btn_border_border'] != '' ? '' : 'btn-border-none';
+        //$border_button_upload = $settings['btn_upload_border_border'] != '' ? '' : 'btn-upload-border-none';
 
 	    // ATTRIBUTES
         $this->add_render_attribute( array(
             'wrapper' => array(
                 'class' => array(
-                    'dcael-ff-style', $border, $border_button, 
+                    'dcael-ff-style', $border, $border_button,
                 ),
             ),
         ));

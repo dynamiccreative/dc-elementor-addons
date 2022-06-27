@@ -4,7 +4,7 @@ ff-btn-submit(send)
 ff_upload_btn(upload)
 */
 .dcael-ff-style.btn-border-none [type=button]:focus, .dcael-ff-style.btn-border-none [type=submit]:focus, .dcael-ff-style.btn-border-none button:focus {border:none!important;}
-.dcael-ff-style.border-none .ff-el-form-control, .dcael-ff-style.btn-border-none .ff-btn-submit, .dcael-ff-style.btn-secondary-border-none .ff-btn-secondary, .dcael-ff-style.btn-border-none .step-nav .ff-btn-prev, .dcael-ff-style.btn-border-none .step-nav .ff-btn-next {border:none!important;}
+.dcael-ff-style.border-none .ff-el-form-control, .dcael-ff-style.btn-border-none .ff-btn-submit, .dcael-ff-style.btn-border-none .ff-btn-secondary, .dcael-ff-style.btn-border-none .step-nav .ff-btn-prev, .dcael-ff-style.btn-border-none .step-nav .ff-btn-next {border:none!important;}
 .dcael-ff-style span.ff_upload_btn {display: inline-block;}
 
 /*radio checkbox*/
@@ -22,6 +22,7 @@ background-repeat: no-repeat; background-position: center; background-size: cont
 /**/
 .dcael-ff-style select.ff-el-form-control {background-color:#fff;}
 .dcael-ff-style select.ff-el-form-control option:hover {background-color: var(--col1); color:#fff;}
+.dcael-ff-style select.ff-el-form-control:not([size]):not([multiple]) {height: auto;}
 .dcael-ff-style .fluentform .ff_upload_btn.ff-btn {background-color: var(--col1); color:#fff;}
 .dcael-ff-style .fluentform .ff_btn_style:focus, .fluentform .ff_btn_style:hover {opacity:1;}
 
