@@ -2,7 +2,7 @@
 /**
  * DCAEL Fluent Form.
  *
- * @version 0.1
+ * @version 0.12
  */
 
 namespace Elementor;
@@ -1138,6 +1138,51 @@ class Widget_Fluent_Form extends Widget_Base {
 			)
 		);
 
+        $this->add_control(
+			'step_title',
+			array(
+				'label'     => __( 'Title', 'elementor' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'     => 'step_typo_title',
+				'global'   => array(
+					'default' => Global_Typography::TYPOGRAPHY_TEXT,
+				),
+				'selector' => '{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li span',
+			)
+		);
+
+		/*$this->add_control(
+			'step_color_title',
+			array(
+				'label'     => __( 'Color', 'elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li span' => 'color: {{VALUE}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'step_color_title_active',
+			array(
+				'label'     => __( 'Color Active', 'elementor' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li.active span' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .dcael-ff-style .fluentform .ff-step-titles li.ff_completed span' => 'color: {{VALUE}};',
+				),
+			)
+		);*/
+
 		$this->add_control(
 			'step_default_message',
 			array(
@@ -1520,6 +1565,7 @@ class Widget_Fluent_Form extends Widget_Base {
         
 		// RENDER
     	?>
+
         <style>.dcael-ff-style .ff-el-group input:checked[type="checkbox"] {background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='<?php echo $this->render_color_picto($settings["__globals__"]['ff_checked_color']); ?>' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");}.dcael-ff-style .ff-el-group input:checked[type="radio"] {background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='<?php echo $this->render_color_picto($settings["__globals__"]['ff_checked_color']); ?>'/%3e%3c/svg%3e");}</style>
     	<div <?php $this->print_render_attribute_string( 'wrapper' ); ?>>
             <?php if ( $settings['form_id'] ) {

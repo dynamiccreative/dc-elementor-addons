@@ -28,3 +28,9 @@ background-repeat: no-repeat; background-position: center; background-size: cont
 
 /*special*/
 .dcael-ff-style .fluentform .ff-el-form-control.ff-el-phone {padding-left: 55px!important;}
+
+/*responsive*/
+@media screen and (max-width: 767px) {
+	.dcael-ff-style .frm-fluent-form .ff-t-container.ff-inner_submit_container.ff_columns_total_2 {display: flex; width: 100%;}
+	.dcael-ff-style .frm-fluent-form .ff-t-container.ff-inner_submit_container.ff_columns_total_2 .ff-t-cell { width:50%; }
+}
