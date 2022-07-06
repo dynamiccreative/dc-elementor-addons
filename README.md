@@ -15,6 +15,7 @@ A widget collection for Elementor page builder plugin.
 * Category Box
 * Info Icon
 * Fluent Form Styler
+* Prefix URL
 
 ## Author
 * [Dynamic Creative](https://dynamic-creative.com) - Agence digitale & informatique
