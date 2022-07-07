@@ -560,9 +560,17 @@ class Widget_Slider_Repeater extends Widget_Base {
         );
 
         $this->add_control(
+            'navigation_style',
+            [
+                'label' => esc_html__( 'Navigation', 'plugin-name' ),
+                'type' => \Elementor\Controls_Manager::HEADING,
+            ]
+        );
+
+        $this->add_control(
             'navigation_color',
             array(
-                'label' => __('Color navigation', 'elementor'),
+                'label' => __('Color', 'elementor'),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#282828',
                 'selectors' => array(
@@ -673,6 +681,20 @@ class Widget_Slider_Repeater extends Widget_Base {
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
+
+        $this->add_control(
+            'content_style',
+            [
+                'label' => esc_html__( 'Style', 'elementor' ),
+                'type' => Controls_Manager::SELECT,
+                'options' => [
+                    'default' => esc_html__( 'Bottom', 'elementor' ),
+                    'opacity' => esc_html__( 'Opacity', 'elementor' ),
+                ],
+                'default' => 'default',
+                'prefix_class' => 'elementor-style-',
+            ]
+        );
 
         $this->add_responsive_control(
             'box_padding',

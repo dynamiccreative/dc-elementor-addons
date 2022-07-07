@@ -21,10 +21,13 @@
 .dc-slider-repeater-container.linear-animation img {pointer-events: none;}
 
 .dc-slider-repeater .ct {position: relative; overflow: hidden;}
-.dc-slider-repeater .item-text {position: absolute; top:100%; left:0; width:100%; height: 100%; text-align:center; pointer-events: none; transition: all 350ms ease;}
-.dc-slider-repeater .swiper-slide:hover .item-text {top: 0;}
+.dc-slider-repeater .item-text {position: absolute; top:0; left:0; width:100%; height: 100%; text-align:center; pointer-events: none; transition: all 350ms ease;}
 .dc-slider-repeater .item-title {margin: 0; text-align: center;}
 .dc-slider-repeater .item-btn {display: inline-block;}
+.elementor-style-default .dc-slider-repeater .item-text {top:100%;}
+.elementor-style-default .dc-slider-repeater .swiper-slide:hover .item-text {top: 0;}
+.elementor-style-opacity .dc-slider-repeater .item-text {visibility: hidden; opacity:0;}
+.elementor-style-opacity .dc-slider-repeater .swiper-slide:hover .item-text {visibility: visible; opacity:1;}
 
 @media only screen and (max-width : 1024px) {
     .dc-slider-repeater-container.slider-nav-horizontal-centerout .elementor-swiper-button-next {right:15px!important;}
