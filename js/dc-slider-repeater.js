@@ -96,11 +96,6 @@ class WidgetSliderRepeater extends elementorModules.frontend.handlers.SwiperBase
 
         swiperOptions.breakpoints = breakpointsSettings;
 
-        console.log(breakpointsSettings)
-        //console.log('settings :: ',this.getElementSettings('style_pagination'))
-
-
-		
 
         if (!$slider.length) {
             return;
@@ -112,10 +107,6 @@ class WidgetSliderRepeater extends elementorModules.frontend.handlers.SwiperBase
         );
 	}
 
-	/*updateTestWidgetContent(){
-		console.log(this.getElementSettings( 'nb_slide' ));
-	}*/
-
 	onInit(){ 
 		//this.updateTestWidgetContent();
 		elementorModules.frontend.handlers.Base.prototype.onInit.apply(this, arguments);
@@ -123,11 +114,6 @@ class WidgetSliderRepeater extends elementorModules.frontend.handlers.SwiperBase
         this.initSlider();
 	}
 
-	/*onElementChange( propertyName ) {
-		if ( 'nb_slide' === propertyName ) {
-			this.updateTestWidgetContent();
-		}
-	}*/
 }
 
 // When the frontend of Elementor is created, add our handler
