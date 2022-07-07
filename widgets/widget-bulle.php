@@ -1,4 +1,10 @@
 <?php
+/**
+ * DCAEL Bulle.
+ *
+ * @version 0.1
+ */
+
 namespace Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly

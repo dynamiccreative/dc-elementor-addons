@@ -1,4 +1,10 @@
 <?php
+/**
+ * DCAEL Bloc Carre.
+ *
+ * @version 0.1
+ */
+
 //https://code.elementor.com/classes/elementor-widget_image_carousel/
 namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) {

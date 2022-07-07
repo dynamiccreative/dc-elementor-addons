@@ -1,4 +1,10 @@
 <?php
+/**
+ * DCAEL Icon text V2.
+ *
+ * @version 0.1
+ */
+
 namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
@@ -13,7 +19,6 @@ class Widget_Icon_Text_v2 extends Widget_Base {
 		return __( '<span style="color:#1463DD;">Widget Icon Text V2</span>', 'elementor-custom-element' );
 	}
 	public function get_icon() {
-		// Icon name from the Elementor font file, as per http://dtbaker.net/web-development/creating-your-own-custom-elementor-widgets/
 		return 'dae-icon eicon-bullet-list';
 	}
 	
@@ -48,50 +53,6 @@ class Widget_Icon_Text_v2 extends Widget_Base {
 				'title' => __( 'Enter some text', 'elementor-custom-element' ),
 			]
 		);
-
-		/*$this->add_control(
-            'icon_color_top',
-            [
-                'label' => __( 'Icon Color', 'elementor' ),
-                'type' => Controls_Manager::COLOR,
-                'default' => '',
-				'selectors' => [
-					'{{WRAPPER}} .icon' => 'color: {{VALUE}};',
-				],
-            ]
-        );*/
-		
-		/*$this->add_control(
-            'icon_size_top',
-            [
-                'label' => __( 'Icon size px', 'elementor' ),
-                'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px' ],
-                'range' => [
-                    'px' => [
-						'min' => 10,
-                        'max' => 60,
-                    ],
-                ],
-				'default' => [
-					'unit' => 'px',
-					'size' => 40,
-				],
-				'selectors' => [
-					'{{WRAPPER}} .icon' => 'font-size: {{SIZE}}{{UNIT}};',
-				],
-            ]
-        );*/
-		
-		/*$this->add_control(
-			'text',
-			[
-				'label' => __( 'Text', 'elementor' ),
-				'type' => Controls_Manager::WYSIWYG,
-				'default' => '',
-				'title' => __( 'Enter some text', 'elementor' ),
-			]
-		);*/
 		
 		$repeater = new Repeater();
 
@@ -154,16 +115,6 @@ class Widget_Icon_Text_v2 extends Widget_Base {
 				'title_field' => '{{{ elementor.helpers.renderIcon( this, selected_icon, {}, "i", "panel" ) || \'<i class="{{ icon }}" aria-hidden="true"></i>\' }}} {{{ text }}}',
 			]
 		);
-
-        /*$this->add_control(
-			'icon-list',
-			[
-				'label' => __( 'Icon list', 'elementor' ),
-				'type' => Controls_Manager::ICONS,
-				//'label_block' => true,
-				//'default' => '',
-			]
-		);*/
 
 		$this->end_controls_section();
 		

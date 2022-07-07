@@ -1,4 +1,10 @@
 <?php
+/**
+ * DCAEL Prefix URL.
+ *
+ * @version 0.1
+ */
+
 namespace Elementor;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
