@@ -2,6 +2,7 @@
 Wordpress elementor widget plugin.
 
 A widget collection for Elementor page builder plugin.
+![downloads](https://img.shields.io/github/downloads/bastiendc/dc-elementor-addons/total) ![downloads@latest](https://img.shields.io/github/downloads/bastiendc/dc-elementor-addons/latest/total)
 
 ## Add-ons
 * Loop post
