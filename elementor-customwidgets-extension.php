@@ -4,7 +4,7 @@
 * Plugin Name: Elementor Custom Widgets Extension
 * Description: DC addons Elementor - Widgets 
 * Plugin URI: https://github.com/bastiendc/dc-elementor-addons
-* Version: 0.282
+* Version: 0.29
 * Author: Dynamic Creative
 * Author URI: https://www.dynamic-creative.com
 * Text Domain: elementor-customwidgets-extension
@@ -80,6 +80,7 @@ class Elementor_CustomWidgets_Extension {
         require_once('widgets/widget-info-icon.php' );
         require_once('widgets/dc-fluent-form.php' );
         require_once('widgets/widget-prefix-url.php' );
+        require_once('widgets/widget-slider-repeater.php' );
         // Register widget
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Loop_Post() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Icon_Text() );
@@ -93,6 +94,7 @@ class Elementor_CustomWidgets_Extension {
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Info_Icon() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Fluent_Form() );
         \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Prefix_Url() );
+        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Repeater() );
     }
 }
 

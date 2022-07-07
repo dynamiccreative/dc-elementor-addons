@@ -1,0 +1,32 @@
+.dc-slider-repeater-container {
+    --esp-next : -2.5em;
+    --esp-next-left : 2.5em;
+    --esp-top : -2em;
+    --esp-rd-top : -2.25em; 
+}
+.dc-slider-repeater-container img {display:block; width: 100%;}
+.dc-slider-repeater-container.slider-nav-vertical-bottom .elementor-swiper-button {top: auto; transform: translateY(0);}
+.dc-slider-repeater-container.slider-nav-vertical-top .elementor-swiper-button { transform: translateY(0); }
+
+.dc-slider-repeater-container .elementor-swiper-button {font-size: 25px;}
+.dc-slider-repeater-container .elementor-swiper-button i {width: 1em; height: 1em; position: relative; display: block;}
+.dc-slider-repeater-container .elementor-swiper-button i:before {position: absolute; left: 50%; transform: translateX(-50%);}
+.elementor-view-framed .dc-slider-repeater-container .elementor-swiper-button {padding: .25em; border: 2px solid #818a91; background-color: transparent;}
+.elementor-shape-circle .dc-slider-repeater-container .elementor-swiper-button {
+  border-radius: 50%;
+}
+
+.dc-slider-repeater-container.linear-animation .swiper-wrapper { transition-timing-function: linear; }
+.dc-slider-repeater-container.linear-animation .elementor-swiper-button, .dc-slider-repeater-container.linear-animation .swiper-pagination, .dc-slider-repeater-container.linear-animation .swiper-scrollbar {display: none;}
+.dc-slider-repeater-container.linear-animation img {pointer-events: none;}
+
+.dc-slider-repeater .ct {position: relative; overflow: hidden;}
+.dc-slider-repeater .item-text {position: absolute; top:100%; left:0; width:100%; height: 100%; text-align:center; pointer-events: none; transition: all 350ms ease;}
+.dc-slider-repeater .swiper-slide:hover .item-text {top: 0;}
+.dc-slider-repeater .item-title {margin: 0; text-align: center;}
+.dc-slider-repeater .item-btn {display: inline-block;}
+
+@media only screen and (max-width : 1024px) {
+    .dc-slider-repeater-container.slider-nav-horizontal-centerout .elementor-swiper-button-next {right:15px!important;}
+    .dc-slider-repeater-container.slider-nav-horizontal-centerout .elementor-swiper-button-prev {left: 15px!important;}
+}

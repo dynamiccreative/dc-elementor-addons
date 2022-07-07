@@ -16,6 +16,7 @@ A widget collection for Elementor page builder plugin.
 * Info Icon
 * Fluent Form Styler
 * Prefix URL
+* Slider Repeater
 
 ## Author
 * [Dynamic Creative](https://dynamic-creative.com) - Agence digitale & informatique

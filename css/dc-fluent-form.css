@@ -24,7 +24,8 @@ background-repeat: no-repeat; background-position: center; background-size: cont
 .dcael-ff-style select.ff-el-form-control option:hover {background-color: var(--col1); color:#fff;}
 .dcael-ff-style select.ff-el-form-control:not([size]):not([multiple]) {height: auto;}
 .dcael-ff-style .fluentform .ff_upload_btn.ff-btn {background-color: var(--col1); color:#fff;}
-.dcael-ff-style .fluentform .ff_btn_style:focus, .fluentform .ff_btn_style:hover {opacity:1;}
+.dcael-ff-style .fluentform .ff_btn_style:focus, .dcael-ff-style .fluentform .ff_btn_style:hover,
+.dcael-ff-style .fluentform .ff-btn:hover {opacity:1;}
 
 /*special*/
 .dcael-ff-style .fluentform .ff-el-form-control.ff-el-phone {padding-left: 55px!important;}
