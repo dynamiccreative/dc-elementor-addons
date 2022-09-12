@@ -9,7 +9,7 @@
 * Author URI: https://www.dynamic-creative.com
 * Text Domain: elementor-customwidgets-extension
 * Domain Path: /languages
-* GitHub Plugin URI: https://github.com/bastiendc/dc-elementor-addons
+* GitHub Plugin URI: https://github.com/dynamiccreative/dc-elementor-addons
 * Primary Branch: main
 */
 
