@@ -4,7 +4,7 @@
 * Plugin Name: Elementor Custom Widgets Extension
 * Description: DC addons Elementor - Widgets 
 * Plugin URI: https://github.com/dynamiccreative/dc-elementor-addons
-* Version: 0.291
+* Version: 0.292
 * Author: Dynamic Creative
 * Author URI: https://www.dynamic-creative.com
 * Text Domain: elementor-customwidgets-extension
@@ -82,19 +82,19 @@ class Elementor_CustomWidgets_Extension {
         require_once('widgets/widget-prefix-url.php' );
         require_once('widgets/widget-slider-repeater.php' );
         // Register widget
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Loop_Post() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Icon_Text() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Icon_Text_v2() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bulle() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Bloc_Carre() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Gallery_Swiper() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Post() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Scrollmagic() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Categorie_Box() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Info_Icon() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Fluent_Form() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Prefix_Url() );
-        \Elementor\Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Widget_Slider_Repeater() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Loop_Post() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Icon_Text() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Icon_Text_v2() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Bulle() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Bloc_Carre() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Gallery_Swiper() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Slider_Post() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Scrollmagic() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Categorie_Box() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Info_Icon() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Fluent_Form() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Prefix_Url() );
+        \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Slider_Repeater() );
     }
 }
 
