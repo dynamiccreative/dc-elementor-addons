@@ -2,7 +2,7 @@
 /**
  * DCAEL Prefix URL.
  *
- * @version 0.1
+ * @version 0.15
  */
 
 namespace Elementor;
@@ -79,6 +79,7 @@ class Widget_Prefix_Url extends Widget_Base {
 			]
 		);
 
+
 		$this->end_controls_section();
         
         $this->start_controls_section(
@@ -96,7 +97,8 @@ class Widget_Prefix_Url extends Widget_Base {
 				'type' => Controls_Manager::COLOR,
 				'default' => '',
 				'selectors' => [
-					'{{WRAPPER}} a .elementor-icon-icon' => 'color: {{VALUE}};'
+					'{{WRAPPER}} a .elementor-icon-icon' => 'color: {{VALUE}};',
+					'{{WRAPPER}} a .elementor-icon-icon svg' => 'fill: {{VALUE}};'
 				],
 				'global' => [
 					'default' => Global_Colors::COLOR_PRIMARY,
@@ -112,6 +114,7 @@ class Widget_Prefix_Url extends Widget_Base {
 				'default' => '',
 				'selectors' => [
 					'{{WRAPPER}} a.elementor-icon-item:hover .elementor-icon-icon i' => 'color: {{VALUE}};',
+					'{{WRAPPER}} a.elementor-icon-item:hover .elementor-icon-icon svg' => 'fill: {{VALUE}};'
 				],
 			]
 		);
@@ -131,6 +134,7 @@ class Widget_Prefix_Url extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .elementor-icon-icon svg' => 'width: {{SIZE}}{{UNIT}}; height:auto; vertical-align: middle;',
 				],
 			]
 		);
@@ -172,7 +176,7 @@ class Widget_Prefix_Url extends Widget_Base {
 			]
 		);
 
-		$this->add_control(
+		$this->add_responsive_control(
 			'text_indent',
 			[
 				'label' => esc_html__( 'Text Indent', 'elementor' ),
@@ -184,6 +188,32 @@ class Widget_Prefix_Url extends Widget_Base {
 				],
 				'selectors' => [
 					'{{WRAPPER}} .elementor-icon-text' => 'padding-left: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
+		$this->add_control(
+			'text_alignment',
+			[
+				'type' => Controls_Manager::CHOOSE,
+				'label' => esc_html__( 'Alignment', 'textdomain' ),
+				'options' => [
+					'left' => [
+						'title' => esc_html__( 'Left', 'textdomain' ),
+						'icon' => 'eicon-text-align-left',
+					],
+					'center' => [
+						'title' => esc_html__( 'Center', 'textdomain' ),
+						'icon' => 'eicon-text-align-center',
+					],
+					'right' => [
+						'title' => esc_html__( 'Right', 'textdomain' ),
+						'icon' => 'eicon-text-align-right',
+					],
+				],
+				'default' => 'left',
+				'selectors' => [
+					'{{WRAPPER}}' => 'text-align: {{VALUE}};',
 				],
 			]
 		);
@@ -219,7 +249,7 @@ class Widget_Prefix_Url extends Widget_Base {
 
 		<div class="widget-prefix-url">
 			<a href="<?php echo $url; ?>" class="elementor-icon-item">
-                <?php if ($icon) { ?><span class="elementor-icon-icon <?php echo $icon; ?>"></span><?php } ?>
+                <?php if ($icon) { ?><span class="elementor-icon-icon"><?php Icons_Manager::render_icon( $settings['selected_icon'], [ 'aria-hidden' => 'true' ] ); ?></span><?php } ?>
 				<span class="elementor-icon-text"><?php echo $settings['text']; ?></span>
 			</a>
 		</div>
