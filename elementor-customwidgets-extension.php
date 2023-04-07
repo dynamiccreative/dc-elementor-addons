@@ -81,6 +81,7 @@ class Elementor_CustomWidgets_Extension {
         require_once('widgets/dc-fluent-form.php' );
         require_once('widgets/widget-prefix-url.php' );
         require_once('widgets/widget-slider-repeater.php' );
+		require_once('widgets/widget-loop-child-page.php' );
         // Register widget
         \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Loop_Post() );
         \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Icon_Text() );
@@ -95,6 +96,7 @@ class Elementor_CustomWidgets_Extension {
         \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Fluent_Form() );
         \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Prefix_Url() );
         \Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Slider_Repeater() );
+		\Elementor\Plugin::instance()->widgets_manager->register( new \Elementor\Widget_Loop_Child_Page() );
     }
 }
 

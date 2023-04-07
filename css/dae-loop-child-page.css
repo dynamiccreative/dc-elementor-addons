@@ -1,0 +1,9 @@
+.widget-loop-child-page .item {position:relative; margin:10px 0;}
+.widget-loop-child-page .item > .ct {padding:15px; box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.17); background:#fff; height: 100%;}
+.widget-loop-child-page .item-img img {width:100%; height: auto;}
+.widget-loop-child-page .item-title {font-size:20px;}
+
+/*responsive*/
+@media screen and (max-width: 767px) {
+	.widget-loop-child-page .item > .ct {max-width:400px; margin:0 auto;}
+}
